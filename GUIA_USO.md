@@ -109,17 +109,22 @@ No hace falta que uses estas frases literalmente, pero cuanto más claro dejes c
 
 ### 1.7 Cómo exportar tu notebook para entregar
 
-La plataforma de la universidad suele pedir el resultado como `.md`, `.pdf` o similar, no el `.ipynb` en crudo. Con el entorno activado, desde la carpeta del proyecto:
+La plataforma de la universidad suele pedir el resultado como `.pdf` o similar, no el `.ipynb` en crudo. Para eso está el exportador del proyecto, que ejecuta el notebook y genera el PDF con los resultados ya visibles:
+
+```powershell
+.\exportar.ps1 notebooks\00_practica-0.ipynb
+```
+
+El PDF aparece en `entregas\`. Las opciones (`--sin-ejecutar`, `--mantener-html`…) y los requisitos están documentados en el **`README.md`**.
+
+Si en algún momento necesitas otro formato, `nbconvert` sigue estando disponible con el entorno activado:
 
 ```powershell
 # A Markdown (texto + código + figuras como imágenes en una carpeta aparte)
 jupyter nbconvert --to markdown notebooks/01_cuestionario.ipynb
-
-# A HTML (para después imprimir a PDF desde el navegador: Ctrl+P -> Guardar como PDF)
-jupyter nbconvert --to html notebooks/01_cuestionario.ipynb
 ```
 
-Ambos comandos usan `nbconvert`, que ya viene instalado con Jupyter Lab — no hace falta instalar nada más. Si necesitas una figura suelta en `.png`/`.jpg` (por ejemplo para pegarla en un documento aparte), usa el parámetro `guardar_como` de `dibujar_grafo`/`dibujar_multigrafo` (ver §3) al generar esa figura.
+Si necesitas una figura suelta en `.png`/`.jpg` (por ejemplo para pegarla en un documento aparte), usa el parámetro `guardar_como` de `dibujar_grafo`/`dibujar_multigrafo` (ver §3) al generar esa figura.
 
 > Nota: las celdas con grafos interactivos de PyVis no se ven bien en el PDF/HTML estático (son widgets pensados para explorar en el propio Jupyter Lab); para el entregable apóyate en las figuras de Matplotlib.
 
