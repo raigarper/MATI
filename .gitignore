@@ -1,0 +1,14 @@
+# Entorno virtual
+.venv/
+
+# Checkpoints automáticos de Jupyter
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Caché de Python
+__pycache__/
+*.pyc
+
+# Exportaciones de notebooks (entregables generados, no fuente)
+notebooks/*.html
+notebooks/*.pdf

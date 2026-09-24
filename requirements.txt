@@ -1,0 +1,29 @@
+# requirements.txt — MATI
+#
+# Solo se listan las dependencias DIRECTAS (las que se importan explícitamente
+# en los notebooks o que hacen falta para levantar Jupyter Lab). El resto de
+# paquetes que aparecían antes en este archivo (argon2-cffi, jupyter_server,
+# tornado, traitlets, mpmath, pillow, kiwisolver, etc.) son dependencias
+# TRANSITIVAS: pip las instala automáticamente al instalar las de abajo, no
+# hace falta fijarlas a mano. Menos líneas, más fácil de mantener.
+#
+# Instalación (con el entorno virtual activado):
+#   pip install -r requirements.txt
+
+# --- Núcleo matemático/grafos ---
+networkx==3.4.2
+sympy==1.14.0
+numpy==2.2.6
+scipy==1.15.3
+
+# --- Visualización ---
+matplotlib==3.10.9
+pyvis==0.3.2
+
+# --- Jupyter Lab y soporte de notebooks ---
+jupyterlab==4.6.3
+ipykernel==7.3.0
+ipywidgets==8.1.9
+
+# --- Exportar notebooks a entregable (.md, .html) ---
+nbconvert==7.17.1
